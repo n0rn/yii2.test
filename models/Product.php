@@ -1,10 +1,8 @@
-
 <?php
 
 namespace app\models;
 
 use Yii;
-use \yii\db\ActiveRecord
 
 /**
  * This is the model class for table "product".
@@ -14,19 +12,21 @@ use \yii\db\ActiveRecord
  * @property string $category
  * @property string $description
  */
-class Product extends ActiveRecord {
-
+class Product extends \yii\db\ActiveRecord
+{
     /**
      * @inheritdoc
      */
-    public static function tableName() {
+    public static function tableName()
+    {
         return 'product';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             [['name', 'category', 'description'], 'required'],
             [['name', 'category', 'description'], 'string', 'max' => 255],
@@ -36,7 +36,8 @@ class Product extends ActiveRecord {
     /**
      * @inheritdoc
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return [
             'id' => 'ID',
             'name' => 'Name',
@@ -44,5 +45,4 @@ class Product extends ActiveRecord {
             'description' => 'Description',
         ];
     }
-
 }

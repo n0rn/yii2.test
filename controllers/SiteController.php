@@ -13,9 +13,7 @@ use app\models\ContactForm;
 
 class SiteController extends Controller
 {
-    /**
-     * @inheritdoc
-     */
+
     public function behaviors()
     {
         return [
@@ -125,6 +123,11 @@ class SiteController extends Controller
         return $this->render('about');
     }
     
+      public function actionHello() 
+      {
+        return $this->render('hello');
+      }
+
     public function actionProduct()
     {
         $product = new Product();
