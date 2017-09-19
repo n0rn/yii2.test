@@ -128,15 +128,4 @@ class SiteController extends Controller
         return $this->render('hello');
       }
 
-    public function actionProduct()
-    {
-        $product = new Product();
-        
-        $product->name = "Slavko";
-        $product->category ="Salat";
-        $product->description = "sfasdfasdfasdfasdfasfasdfasdf";
-        $product->save();
-        
-        return $this->render('product', compact('product'));
-    }
 }
