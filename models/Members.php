@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "members".
@@ -13,7 +14,7 @@ use Yii;
  * @property string $text
  * @property string $time
  */
-class Members extends \yii\db\ActiveRecord
+class Members extends ActiveRecord
 {
     /**
      * @inheritdoc
