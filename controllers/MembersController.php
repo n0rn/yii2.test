@@ -18,10 +18,13 @@ class MembersController  extends Controller
     
         public function actionIndex() {
             
-         $addMembers = Yii::$app->params['addMembers'];
-        $model = $addMembers ? new RegForm(['scenario' => 'addMembers']) : new RegForm();
-            
-            return $this->render('index',  compact('model'));
+         $model = new RegForm();
+          
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($user = $model->reg());
+        }
+
+        return $this->render('index',  compact('model'));
            
         }
 

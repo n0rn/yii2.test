@@ -47,11 +47,11 @@ class RegForm  extends  Model
     
     public function reg() 
     {
+        
         $members = new Members();
         $members->name = $this->name;
          $members->email = $this->email;
          $members->text = $this->text; 
-         $members->time = $this->date("Y-m-d H:i:s");
         return  $members->save() ?    $members : null;
     }
     
