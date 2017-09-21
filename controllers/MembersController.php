@@ -4,7 +4,8 @@ namespace app\controllers;
 
 
 use yii\web\Controller;
- use app\models\Members;
+use app\models\Members;
+use app\models\RegForm;
 
 /**
  * Description of MembersController
@@ -16,9 +17,9 @@ class MembersController  extends Controller
     
         public function actionIndex() {
             
-            $members =  new Members();
+            $model = $addMembers ? new RegForm(['scenario' => 'addMembers']) : new RegForm();
             
-            return $this->render('index',  compact('members'));
+            return $this->render('index',  compact('model'));
         }
 
 }
