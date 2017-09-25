@@ -6,7 +6,7 @@ use Yii;
 use yii\web\Controller;
 use app\models\Members;
 use app\models\RegForm;
-use app\controllers\ActiveDataProvider;
+use yii\data\ActiveDataProvider;
 
 /**
 
@@ -30,14 +30,14 @@ class MembersController  extends Controller
         
         public function actionList()
         {
-            $provider = new ActiveDataProvider([
+             $dataProviderr = new ActiveDataProvider([
                       'query' => Members::find(),
                       'pagination' => [
                       'pageSize' => 5,
                  ],
             ]);
             
-            return $this->render('list', compact(provider));
+            return $this->render('list', ['read'  => $dataProviderr]);
         }
 
 }
