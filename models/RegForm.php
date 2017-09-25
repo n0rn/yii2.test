@@ -51,7 +51,8 @@ class RegForm  extends  Model
         $members = new Members();
         $members->name = $this->name;
          $members->email = $this->email;
-         $members->text = $this->text; 
+         $members->text = $this->text;
+         $members->time = date("Y-m-d H:i:s");
         return  $members->save() ?    $members : null;
     }
     
