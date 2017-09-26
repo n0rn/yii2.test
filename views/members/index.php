@@ -2,12 +2,19 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\RegForm */
 /* @var $form ActiveForm */
+
 ?>
-<div class="main-reg">
+
+    <?php Pjax::begin(); ?>
+    <?= Html::a("Обновить", ['site/auto-refresh'], ['class' => 'btn btn-lg btn-primary', 'id' => 'refreshButton']) ?>
+    <h1>Сейчас: <?= $time ?></h1>
+    <?php Pjax::end(); ?>
+    <div class="main-reg">
 
     <?php $form = ActiveForm::begin(); ?>
 

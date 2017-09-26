@@ -19,14 +19,15 @@ class MembersController  extends Controller
 {
     
         public function actionIndex() {
-            
+
+         $time = date('H:i:s');
          $model = new RegForm();
           
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($user = $model->reg());
         }
 
-        return $this->render('index',  compact('model'));
+        return $this->render('index',  compact('model', 'time'));
            
         }
         
