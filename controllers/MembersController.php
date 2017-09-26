@@ -39,5 +39,18 @@ class MembersController  extends Controller
             
             return $this->render('list', ['read'  => $dataProviderr]);
         }
+        
+        
+        public function actionRead()
+        {
+            $dataProvider = new ActiveDataProvider([
+            'query' => Members::find(),
+            'pagination' => [
+                'pageSize' => 5,
+            ],
+        ]);
+            
+             return $this->render('read', ['read' => $dataProvider]);
+    }
 
 }
